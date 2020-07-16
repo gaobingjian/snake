@@ -1,0 +1,86 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.content{	/*最外面一层宽高都是640*/
+	height:640px;
+	width:640px;
+	position:relative;	/*relative做参照物*/
+	margin:100px auto;
+}
+
+.btn{		/*按钮外面的div 宽高都是640*/
+	height:100%;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background-color:rgba(0, 0, 0, 0.3);	/*作为遮盖物 一层灰色 暂停时或未开始时*/
+	z-index:2;		/*保证两个按钮在最上面*/
+}
+
+.btn button{	/*同时定义两个按钮 共有的属性*/
+	background:none;	/*将button的一些原有的属性去掉*/
+	border:none;
+	outline:none;
+
+	cursor:pointer;  	/*鼠标移过去变成手指*/
+
+	position:absolute;
+	left:50%;
+	top:50%;
+	
+}
+
+.startBtn button{	/*设置开始游戏按钮 宽200 高80*/
+	background-image:url(./image/start.jpg);
+	background-size:cover;
+	height:80px;
+	width:300px;
+	margin-left:-150px;		/*保证按钮居中*/
+	margin-top:-40px;
+	
+	
+}
+
+.pauseBtn{
+	display:none;		/*一开始继续按钮不需要出现*/
+}
+.pauseBtn button{		/*设置继续按钮 宽高都是70*/
+	height:70px;
+	width:70px;
+	margin-left:-35px;		/*保证按钮居中*/
+	margin-top:-35px;
+	background-image:url(./image/pause.jpg);
+	background-size:cover;
+	border-radius:50%;
+}
+
+#snakeWrap{		/*设置贪吃蛇的主体 宽高都是600*/
+	position:relative;
+	width:600px;
+	height:600px;
+	background-color:#225675;
+	border:20px solid #7dd9ff;		/*20的边界*/
+}
+
+/*#snakeWrap div{		蛇头和身体还有食物的宽高都是20
+	width:20px;
+	height:20px;
+}*/
+
+.snakeHead{	/*蛇头*/
+	background-image:url(./image/head.jpg);
+	background-size:cover;
+}
+
+.snakeBody{	/*蛇的身体*/
+	background-color:#9ddbb1;
+	border-radius:50%;
+}
+
+.food{	/*食物*/
+	background-image:url(./image/food.jpg);
+	background-size:cover;
+}
